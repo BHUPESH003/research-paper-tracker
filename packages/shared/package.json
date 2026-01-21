@@ -11,7 +11,7 @@
     }
   },
   "scripts": {
-    "build": "tsc"
+    "build": "rm -rf dist tsconfig.tsbuildinfo && tsc"
   },
   "devDependencies": {
     "typescript": "^5.9.3"
