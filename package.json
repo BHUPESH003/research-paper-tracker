@@ -1,0 +1,12 @@
+{
+  "name": "research-paper-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Research Paper Reading Tracker - Production-grade TypeScript monorepo",
+  "scripts": {
+    "lint": "echo \"Lint script placeholder\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,20 @@
+packages:
+  - 'apps/*'
+  - 'packages/*'
+
+# Centralized dependency version management
+# Use "catalog:" in package.json to reference these versions
+catalogs:
+  default:
+    typescript: ^5.9.3
+    '@types/node': ^22.0.0
+  
+  backend:
+    express: ^5.1.0
+    cors: ^2.8.5
+    '@types/express': ^5.0.6
+    '@types/cors': ^2.8.17
+    ts-node: ^10.9.2
+    nodemon: ^3.1.0
+    prisma: ^6.3.1
+    '@prisma/client': ^6.3.1

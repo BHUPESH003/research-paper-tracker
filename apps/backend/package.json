@@ -1,0 +1,28 @@
+{
+  "name": "@research-paper-tracker/backend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon --watch src --exec ts-node src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "db:generate": "prisma generate --schema=./src/db/schema.prisma",
+    "db:push": "prisma db push --schema=./src/db/schema.prisma",
+    "db:studio": "prisma studio --schema=./src/db/schema.prisma"
+  },
+  "dependencies": {
+    "shared": "workspace:*",
+    "express": "^5.1.0",
+    "cors": "^2.8.5",
+    "@prisma/client": "^6.3.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "@types/node": "^22.0.0",
+    "@types/express": "^5.0.6",
+    "@types/cors": "^2.8.17",
+    "ts-node": "^10.9.2",
+    "nodemon": "^3.1.0",
+    "prisma": "^6.3.1"
+  }
+}

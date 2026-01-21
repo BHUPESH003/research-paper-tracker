@@ -1,0 +1,67 @@
+// Prisma Schema for Research Paper Reading Tracker
+// This schema defines the database structure for PostgreSQL
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+// Enums matching shared package enums
+enum ResearchDomain {
+  COMPUTER_SCIENCE
+  BIOLOGY
+  PHYSICS
+  CHEMISTRY
+  MATHEMATICS
+  SOCIAL_SCIENCES
+}
+
+enum ReadingStage {
+  ABSTRACT_READ
+  INTRODUCTION_DONE
+  METHODOLOGY_DONE
+  RESULTS_ANALYZED
+  FULLY_READ
+  NOTES_COMPLETED
+}
+
+enum ImpactScore {
+  HIGH
+  MEDIUM
+  LOW
+  UNKNOWN
+}
+
+// User access key model
+model UserAccessKey {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  hashedKey String   @unique
+  createdAt DateTime @default(now())
+
+  papers Paper[]
+}
+
+// Paper model
+model Paper {
+  id             String         @id @default(uuid())
+  title          String
+  firstAuthor    String
+  researchDomain ResearchDomain
+  readingStage   ReadingStage
+  citationCount  Int
+  impactScore    ImpactScore
+  dateAdded      DateTime
+  isArchived     Boolean        @default(false)
+
+  userKeyId String
+  userKey   UserAccessKey @relation(fields: [userKeyId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([title, firstAuthor, userKeyId])
+}
