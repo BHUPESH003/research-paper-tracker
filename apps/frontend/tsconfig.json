@@ -15,7 +15,11 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "@shared": ["../../packages/shared/dist/index.d.ts"],
+      "@shared/*": ["../../packages/shared/dist/*"]
+    }
   },
   "include": ["src", "vite-env.d.ts"],
   "references": [
