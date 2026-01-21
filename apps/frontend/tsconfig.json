@@ -17,8 +17,8 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@shared": ["../../packages/shared/dist/index.d.ts"],
-      "@shared/*": ["../../packages/shared/dist/*"]
+      "@shared": ["../../packages/shared/src/index.ts"],
+      "@shared/*": ["../../packages/shared/src/*"]
     }
   },
   "include": ["src", "vite-env.d.ts"],

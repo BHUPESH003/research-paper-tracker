@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Routes, Route, Link, Navigate } from 'react-router-dom';
 import { AddPaper } from './pages/AddPaper';
 import { Library } from './pages/Library';
@@ -38,6 +39,15 @@ function ProtectedRoute({ children }: { children: React.ReactNode }) {
  */
 function App() {
   const isSetupComplete = localStorage.getItem("RPT_SETUP_COMPLETE");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
 
   return (
     <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
@@ -47,81 +57,97 @@ function App() {
           padding: "1rem",
           backgroundColor: "#007bff",
           color: "white",
-          boxShadow: "0 2px 4px rgba(0,0,0,0.1)"
+          boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+          position: "relative"
         }}>
           <div style={{
             maxWidth: "1400px",
             margin: "0 auto",
             display: "flex",
-            gap: "1rem",
-            flexWrap: "wrap",
             alignItems: "center"
           }}>
             <Link
               to="/library"
+              onClick={closeMobileMenu}
               style={{
                 color: "white",
                 textDecoration: "none",
                 margin: 0,
                 fontSize: "1.25rem",
-                marginRight: "auto",
                 fontWeight: "bold"
               }}
             >
-              Research Paper Tracker
+              RPT
             </Link>
-            <Link 
-              to="/add" 
-              style={{ 
-                color: "white", 
-                textDecoration: "none",
-                padding: "0.5rem 1rem",
-                borderRadius: "4px",
-                backgroundColor: "rgba(255,255,255,0.1)",
-                transition: "background-color 0.2s"
-              }}
+            
+            {/* Mobile Menu Toggle */}
+            <button 
+              className="mobile-nav-toggle"
+              onClick={toggleMobileMenu}
+              aria-label="Toggle menu"
             >
-              Add Paper
-            </Link>
-            <Link 
-              to="/library" 
-              style={{ 
-                color: "white", 
-                textDecoration: "none",
-                padding: "0.5rem 1rem",
-                borderRadius: "4px",
-                backgroundColor: "rgba(255,255,255,0.1)",
-                transition: "background-color 0.2s"
-              }}
-            >
-              Library
-            </Link>
-            <Link 
-              to="/analytics" 
-              style={{ 
-                color: "white", 
-                textDecoration: "none",
-                padding: "0.5rem 1rem",
-                borderRadius: "4px",
-                backgroundColor: "rgba(255,255,255,0.1)",
-                transition: "background-color 0.2s"
-              }}
-            >
-              Analytics
-            </Link>
-            <Link 
-              to="/profile" 
-              style={{ 
-                color: "white", 
-                textDecoration: "none",
-                padding: "0.5rem 1rem",
-                borderRadius: "4px",
-                backgroundColor: "rgba(255,255,255,0.2)",
-                transition: "background-color 0.2s"
-              }}
-            >
-              Profile
-            </Link>
+              {mobileMenuOpen ? '✕' : '☰'}
+            </button>
+            
+            {/* Navigation Links */}
+            <div className={`nav-links ${mobileMenuOpen ? 'open' : ''}`}>
+              <Link 
+                to="/add" 
+                onClick={closeMobileMenu}
+                style={{ 
+                  color: "white", 
+                  textDecoration: "none",
+                  padding: "0.5rem 1rem",
+                  borderRadius: "4px",
+                  backgroundColor: "rgba(255,255,255,0.1)",
+                  transition: "background-color 0.2s"
+                }}
+              >
+                Add Paper
+              </Link>
+              <Link 
+                to="/library" 
+                onClick={closeMobileMenu}
+                style={{ 
+                  color: "white", 
+                  textDecoration: "none",
+                  padding: "0.5rem 1rem",
+                  borderRadius: "4px",
+                  backgroundColor: "rgba(255,255,255,0.1)",
+                  transition: "background-color 0.2s"
+                }}
+              >
+                Library
+              </Link>
+              <Link 
+                to="/analytics" 
+                onClick={closeMobileMenu}
+                style={{ 
+                  color: "white", 
+                  textDecoration: "none",
+                  padding: "0.5rem 1rem",
+                  borderRadius: "4px",
+                  backgroundColor: "rgba(255,255,255,0.1)",
+                  transition: "background-color 0.2s"
+                }}
+              >
+                Analytics
+              </Link>
+              <Link 
+                to="/profile" 
+                onClick={closeMobileMenu}
+                style={{ 
+                  color: "white", 
+                  textDecoration: "none",
+                  padding: "0.5rem 1rem",
+                  borderRadius: "4px",
+                  backgroundColor: "rgba(255,255,255,0.2)",
+                  transition: "background-color 0.2s"
+                }}
+              >
+                Profile
+              </Link>
+            </div>
           </div>
         </nav>
       )}

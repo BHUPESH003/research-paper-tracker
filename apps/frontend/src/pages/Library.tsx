@@ -249,20 +249,13 @@ export function Library() {
       </div>
 
       {/* Two-Column Layout */}
-      <div style={{ 
-        display: "grid", 
-        gridTemplateColumns: "280px 1fr", 
-        gap: "1.5rem",
-        alignItems: "start"
-      }}>
+      <div className="library-layout">
         {/* Filters Card (Left Column) */}
-        <div style={{ 
+        <div className="filter-sidebar" style={{ 
           padding: "1.5rem", 
           backgroundColor: "white",
           borderRadius: "8px",
-          boxShadow: "0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06)",
-          position: "sticky",
-          top: "1rem"
+          boxShadow: "0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06)"
         }}>
           <h3 style={{ fontSize: "1.125rem", fontWeight: "600", marginTop: 0, marginBottom: "1.5rem", color: "#2d3748", paddingBottom: "0.75rem", borderBottom: "2px solid #e2e8f0" }}>
             Filters
@@ -476,16 +469,8 @@ export function Library() {
 
           {/* Table Card */}
           {!loading && papers.length > 0 && (
-            <div style={{
-              backgroundColor: "white",
-              borderRadius: "8px",
-              boxShadow: "0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06)",
-              overflow: "hidden"
-            }}>
-              <div style={{ 
-                overflowX: "auto",
-                WebkitOverflowScrolling: "touch"
-              }}>
+            <div className="library-table-card">
+              <div className="library-table-wrapper">
                 <table style={{ 
                   width: "100%", 
                   minWidth: "800px",
