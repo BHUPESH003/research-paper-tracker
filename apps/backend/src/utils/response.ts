@@ -1,5 +1,5 @@
 import { Response } from "express";
-import { ApiResponse } from "shared";
+import { ApiResponse } from "@shared";
 
 /**
  * Standardized API response helper

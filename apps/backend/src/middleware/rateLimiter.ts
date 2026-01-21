@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { READ_LIMIT, WRITE_LIMIT } from "shared";
+import { READ_LIMIT, WRITE_LIMIT } from "@shared";
 import { sendResponse } from "../utils/response";
 
 /**

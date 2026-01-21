@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import { sendResponse } from "../utils/response";
 import * as paperService from "../services/paper.service";
 import { ResearchDomain, ReadingStage, ImpactScore } from "@prisma/client";
-import { DateRangeFilterType } from "shared";
+import { DateRangeFilterType } from "@shared";
 
 /**
  * Paper Controller

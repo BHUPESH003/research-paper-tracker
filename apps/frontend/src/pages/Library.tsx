@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ResearchDomain, ReadingStage, ImpactScore } from "shared";
+import { ResearchDomain, ReadingStage, ImpactScore } from "@shared";
 import { get, patch, ApiError } from "../services/api";
 import { LoadingSpinner } from "../components/common/LoadingSpinner";
 import { EmptyState } from "../components/common/EmptyState";

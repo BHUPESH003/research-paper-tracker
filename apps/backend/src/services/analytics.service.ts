@@ -1,6 +1,6 @@
 import { prisma } from "../db/prisma";
 import { ResearchDomain, ReadingStage, ImpactScore } from "@prisma/client";
-import { DateRangeFilterType } from "shared";
+import { DateRangeFilterType } from "@shared";
 
 /**
  * Analytics Service

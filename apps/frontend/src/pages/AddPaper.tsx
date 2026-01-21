@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { ResearchDomain, ReadingStage, ImpactScore } from "shared";
+import { ResearchDomain, ReadingStage, ImpactScore } from "@shared";
 import { post, ApiError } from "../services/api";
 
 /**

@@ -1,4 +1,4 @@
-import { ApiResponse } from "shared";
+import { ApiResponse } from "@shared";
 
 /**
  * API Client

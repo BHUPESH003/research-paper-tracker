@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import { sendResponse } from "../utils/response";
 import * as analyticsService from "../services/analytics.service";
 import { ResearchDomain, ReadingStage, ImpactScore } from "@prisma/client";
-import { DateRangeFilterType } from "shared";
+import { DateRangeFilterType } from "@shared";
 
 /**
  * Analytics Controller
