@@ -2,10 +2,10 @@
   "name": "@research-paper-tracker/backend",
   "version": "1.0.0",
   "private": true,
-  "scripts": {
-    "dev": "nodemon --watch src --exec ts-node src/server.ts",
-    "build": "tsc",
+  "scripts": {    
+    "build": "pnpm --filter @shared build && prisma generate && tsc",
     "start": "node dist/server.js",
+    "dev": "nodemon --watch src --exec ts-node src/server.ts",
     "db:generate": "prisma generate --schema=./src/db/schema.prisma",
     "db:push": "prisma db push --schema=./src/db/schema.prisma",
     "db:studio": "prisma studio --schema=./src/db/schema.prisma"
