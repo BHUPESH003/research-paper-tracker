@@ -4,13 +4,17 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "module": "CommonJS",
+    "moduleResolution": "node",
     "types": ["node"],
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "resolveJsonModule": true,
     "typeRoots": ["./node_modules/@types", "./src/types"],
+    "baseUrl": "./src",
     "paths": {
-      "@shared": ["../../packages/shared/dist/index.d.ts"],
-      "@shared/*": ["../../packages/shared/dist/*"]
+      "@shared": ["../../../packages/shared/dist"],
+      "@shared/*": ["../../../packages/shared/dist/*"]
     }
   },
   "include": ["src/**/*", "src/types/**/*.d.ts"],

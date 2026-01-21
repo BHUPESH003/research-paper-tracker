@@ -6,7 +6,7 @@
     "schema": "src/db/schema.prisma"
   },
   "scripts": {
-    "build": "pnpm --filter @shared build && prisma generate && tsc",
+    "build": "pnpm --filter @shared build && prisma generate && tsc && tsc-alias",
     "start": "node dist/server.js",
     "dev": "nodemon --watch src --exec ts-node src/server.ts",
     "db:generate": "prisma generate",
@@ -14,18 +14,19 @@
     "db:studio": "prisma studio"
   },
   "dependencies": {
+    "@prisma/client": "^6.3.1",
     "@shared": "workspace:*",
-    "express": "^5.1.0",
     "cors": "^2.8.5",
-    "@prisma/client": "^6.3.1"
+    "express": "^5.1.0"
   },
   "devDependencies": {
-    "typescript": "^5.9.3",
-    "@types/node": "^22.0.0",
-    "@types/express": "^5.0.6",
     "@types/cors": "^2.8.17",
-    "ts-node": "^10.9.2",
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.0.0",
     "nodemon": "^3.1.0",
-    "prisma": "^6.3.1"
+    "prisma": "^6.3.1",
+    "ts-node": "^10.9.2",
+    "tsc-alias": "^1.8.16",
+    "typescript": "^5.9.3"
   }
 }
