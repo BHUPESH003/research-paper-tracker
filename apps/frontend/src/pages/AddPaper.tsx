@@ -78,7 +78,7 @@ export function AddPaper() {
           Add Research Paper
         </h1>
         <p style={{ fontSize: "1rem", color: "#718096", maxWidth: "600px", margin: "0 auto" }}>
-          Add a new paper to your research library. Track your reading progress, citations, and impact scores.
+          Add a new paper to your research library. Track your reading progress, citations, and impact scores. Here
         </p>
       </div>
 
